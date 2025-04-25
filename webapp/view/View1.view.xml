@@ -1,0 +1,19 @@
+<mvc:View controllerName="org.indexit.zui5.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+             <!-- Declaration of event 
+            <Input id="idInput" placeholder="Enter your name" />
+            <Button id="idBtn"  text="Hello" press="onClick"/> -->
+           <!-- <Button text="Hello" id="idBtn1" press="ButtonEvent"/> -->
+
+          <!-- 25042025 -->
+          <Input id="idVal1" placeholder="Enter Value" />
+          <Input id="idVal2" placeholder="Enter Value" />
+          <Button text="Addition" id="idAdd" press="onAddition" icon="sap-icon://sys-add"/>
+
+          
+        </content>
+    </Page>
+</mvc:View>
