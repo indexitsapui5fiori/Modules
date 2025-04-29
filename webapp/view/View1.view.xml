@@ -11,9 +11,10 @@
           <!-- 25042025 -->
           <Input id="idVal1" placeholder="Enter Value" />
           <Input id="idVal2" placeholder="Enter Value" />
-          <Button text="Addition" id="idAdd" press="onAddition" icon="sap-icon://sys-add"/>
-
-          
+          <Button text="{i18n>add}" id="idAdd" press="onOperation" icon="sap-icon://sys-add"/>
+          <Button text="{i18n>sub}" id="idSub" press="onOperation" icon="sap-icon://sys-minus"/>
+          <Button text="{i18n>mul}" id="idMul" press="onOperation" icon="sap-icon://notification"/>
+          <Button text="{i18n>div}" id="idDiv" press="onOperation" icon="sap-icon://filter-analytics"/>   
         </content>
     </Page>
 </mvc:View>

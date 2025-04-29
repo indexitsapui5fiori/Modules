@@ -20,8 +20,8 @@ sap.ui.define([
            //var btnText = this.getView().byId("idBtn").mProperties.text;
 
            //Recommended standard
-          var inputValue= this.getView().byId("idInput").getValue();
-          var btnText=this.getView().byId("idBtn").getText();
+           var inputValue= this.getView().byId("idInput").getValue();
+           var btnText=this.getView().byId("idBtn").getText();
            var msgData = btnText+inputValue;
            console.log(msgData);
            var clearMessage="Thank you";
@@ -38,21 +38,12 @@ sap.ui.define([
         // }
 
         onAddition:function(){
+
+           // Values, Operators, Expressions, Keywords, and Comments.
             var value1=parseInt(this.getView().byId("idVal1").getValue());
             var value2=parseInt(this.getView().byId("idVal2").getValue());
             var total=value1+value2;
-            // MessageBox.alert("Total of two numbers " + total, {
-            //     title: "Alert",                                      // default
-            //     onClose: null,                                       // default
-            //     styleClass: "",                                      // default
-            //     actions: sap.m.MessageBox.Action.OK,                 // default
-            //     emphasizedAction: sap.m.MessageBox.Action.OK,        // default
-            //     initialFocus: null,                                  // default
-            //     textDirection: sap.ui.core.TextDirection.Inherit,    // default
-            //     dependentOn: null                                    // default
-            // });
-
-         // sap.m.MessageToast.show();
+           
          var sMessage="Total of two numbers " + total;
          var mOptions={
             duration: 3000,                  // default
@@ -70,16 +61,97 @@ sap.ui.define([
          };
 
          sap.m.MessageToast.show(sMessage, mOptions);
-
-
-
-
             this.getView().byId("idVal1").setValue("");
             this.getView().byId("idVal2").setValue("");
 
-            //  alert("Total of two numbers " + total);
-           // console.log(total);
+         
+        },
+        onSubstration:function(){
+            var value1=parseInt(this.getView().byId("idVal1").getValue());
+            let value2=parseInt(this.getView().byId("idVal2").getValue());
+            var total=value1-value2;
+            var sMessage="Total of two numbers " + total;
+            var mOptions={
+            duration: 3000,                  // default
+            width: "15em",                   // default
+            my: "center bottom",             // default
+            at: "center bottom",             // default
+            of: window,                      // default
+            offset: "0 0",                   // default
+            collision: "fit fit",            // default
+            onClose: null,                   // default
+            autoClose: true,                 // default
+            animationTimingFunction: "ease", // default
+            animationDuration: 1000,         // default
+            closeOnBrowserNavigation: true   // default
+         };
+
+            sap.m.MessageToast.show(sMessage, mOptions);
+            this.getView().byId("idVal1").setValue("");
+            this.getView().byId("idVal2").setValue("");
+        },
+        onOperation:function(oEvent){
+            let value1=parseInt(this.getView().byId("idVal1").getValue());
+            let value2=parseInt(this.getView().byId("idVal2").getValue());
+            let btnText=oEvent.getSource().getProperty("text");
+
             
+            // var btnTextAdd=this.getView().byId("idAdd").getText();
+            // var btnTextSub=this.getView().byId("idSub").getText();
+            // var btnTextMul=this.getView().byId("idMul").getText();
+            // var btnTextDiv=this.getView().byId("idDiv").getText();
+
+            // if(btnText=="Addition"){
+            //     let Add= value1+value2;
+            //     MessageBox.show("Addition of two number :" +Add);
+            //     this.getView().byId("idVal1").setValue("");
+            //     this.getView().byId("idVal2").setValue("");
+            // }
+            // else{
+            //     if(btnText=="Substraction"){
+            //         let Sub= value1-value2;
+            //         MessageBox.show("Substraction of two number :" + Sub);
+            //         this.getView().byId("idVal1").setValue("");
+            //         this.getView().byId("idVal2").setValue("");
+            //     }
+
+            // }
+
+
+            // let Add= value1+value2;
+            // let Sub= value1-value2;
+            // let Mul= value1*value2;
+            // let Div= value1/value2;
+
+            switch(btnText) {
+                case "Addition":
+                        let Add = value1+value2;
+                        MessageBox.show("Addition of two number :" + Add);
+                        this.getView().byId("idVal1").setValue("");
+                        this.getView().byId("idVal2").setValue("");
+                  break;
+                case "Substraction":
+                    let Sub= value1-value2;
+                    MessageBox.show("Substraction of two number :" + Sub);
+                    this.getView().byId("idVal1").setValue("");
+                    this.getView().byId("idVal2").setValue("");
+                  break;
+                  case "Multiplication":
+                    let Mul= value1*value2;
+                    MessageBox.show("Multiplication of two number :" + Mul);
+                    this.getView().byId("idVal1").setValue("");
+                    this.getView().byId("idVal2").setValue("");
+                  break;
+                  case "Divsion":
+                    let Div= value1/value2;
+                    MessageBox.show("Divsion of two number :" + Div);
+                    this.getView().byId("idVal1").setValue("");
+                    this.getView().byId("idVal2").setValue("");
+                  break;
+                default:
+                    MessageBox.show("Please select the operator for operation");
+              }
+
 
         }
     });
